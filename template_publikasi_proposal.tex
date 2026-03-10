@@ -1,0 +1,36 @@
+\documentclass[proposal-publikasi]{unnes-ta_plus}
+
+% (opsional) Bahasa Indonesia untuk judul "Daftar Isi", dll.
+\usepackage[indonesian]{babel}
+
+% Jika ingin menyisipkan naskah artikel dalam bentuk PDF:
+\usepackage{pdfpages}
+
+\unnesSetTitle{JUDUL ARTIKEL ANDA}
+\unnesSetAuthor{Nama Mahasiswa}
+\unnesSetNIM{1234567890}
+\unnesSetProdi{Nama Prodi}
+\unnesSetFakultas{Nama Fakultas}
+\unnesSetDegree{Sarjana ....}
+\unnesSetCity{Semarang}
+\unnesSetYear{2026}
+\unnesSetPembimbing{Nama Pembimbing}{NIP Pembimbing}
+
+\begin{document}
+
+\maketitleunnes
+\unnesPersetujuanPembimbing
+% (proposal) biasanya cukup sampai persetujuan pembimbing + daftar isi
+
+\tableofcontents
+\unnesMainMatter
+
+% ===== Bagian utama: naskah artikel (sesuai template jurnal) =====
+% Opsi 1: Anda tulis langsung di sini / \input{artikel.tex}
+% Opsi 2: Anda sisipkan PDF naskah artikel:
+% \includepdf[pages=-]{naskah_artikel.pdf}
+
+\chapter{Naskah Artikel}
+Tuliskan naskah artikel di sini atau sisipkan PDF seperti contoh di atas.
+
+\end{document}
