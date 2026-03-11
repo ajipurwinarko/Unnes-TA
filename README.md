@@ -15,17 +15,26 @@ Kelas utama yang direkomendasikan adalah **`unnes-ta_plus.cls`** karena sudah me
 
 Paket ini berisi file utama berikut:
 
-- `unnes-ta_plus.cls` → class utama yang mendukung proposal, skripsi, publikasi, dan book chapter.
-- `unnes-ta.cls` → class versi dasar untuk proposal dan skripsi.
-- `proposal.tex` → contoh dokumen proposal skripsi.
-- `skripsi.tex` → contoh dokumen skripsi.
-- `template_publikasi_proposal.tex` → contoh proposal publikasi ilmiah.
-- `template_publikasi_laporan.tex` → contoh laporan/publikasi ilmiah.
-- `template_bookchapter_proposal.tex` → contoh proposal book chapter.
-- `template_bookchapter_laporan.tex` → contoh laporan book chapter.
+- `unnes-ta_plus.cls` → class utama yang mendukung proposal skripsi, skripsi, proposal publikasi ilmiah, laporan/publikasi ilmiah, proposal book chapter, dan laporan/final book chapter.
+- `unnes-ta.cls` → class versi dasar untuk penulisan proposal skripsi dan skripsi.
+- `proposal.tex` → template dasar proposal skripsi.
+- `skripsi.tex` → template dasar skripsi.
+- `template_publikasi_proposal.tex` → template proposal publikasi ilmiah.
+- `template_publikasi_laporan.tex` → template laporan/publikasi ilmiah.
+- `template_bookchapter_proposal.tex` → template proposal book chapter.
+- `template_bookchapter_laporan.tex` → template laporan/final book chapter.
+- `contoh_proposal_skripsi.tex` → contoh proposal skripsi yang sudah dilengkapi persamaan, tabel, gambar, sitasi, dan referensi dummy.
+- `contoh_proposal_skripsi.pdf` → hasil kompilasi dari contoh proposal skripsi.
+- `contoh_proposal_bookchapter.tex` → contoh proposal book chapter yang sudah dilengkapi persamaan, tabel, gambar, sitasi, dan referensi dummy.
+- `contoh_proposal_bookchapter.pdf` → hasil kompilasi dari contoh proposal book chapter.
+- `references_dummy.bib` → file referensi dummy untuk contoh proposal skripsi.
+- `references_dummy_bookchapter.bib` → file referensi dummy untuk contoh proposal book chapter.
 - `logo-unnes.png` → logo yang dipakai pada halaman sampul.
+- `README.md` → panduan penggunaan paket dan penjelasan struktur file.
 
 ---
+
+
 
 ## 2. Rekomendasi penggunaan
 
