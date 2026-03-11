@@ -1,0 +1,116 @@
+\documentclass[proposal]{unnes-ta_plus}
+
+% ---- paket tambahan untuk contoh isi ----
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{url}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{references_dummy.bib}
+
+% ---- metadata ----
+\unnesSetTitle{Analisis Dummy Sistem Prediksi Akademik Menggunakan Data Simulasi}
+\unnesSetDegree{Sarjana Komputer}
+\unnesSetAuthor{Nama Mahasiswa}
+\unnesSetNIM{1234567890}
+\unnesSetProdi{Teknik Informatika}
+\unnesSetFakultas{Fakultas Matematika dan Ilmu Pengetahuan Alam}
+\unnesSetCity{Semarang}
+\unnesSetYear{2026}
+\unnesSetPembimbing{Nama Pembimbing}{NIP Pembimbing}
+
+\begin{document}
+\unnesFrontMatter
+
+\maketitleunnes
+\unnesPersetujuanPembimbing
+\tableofcontents
+\clearpage
+
+\unnesMainMatter
+
+\chapter{Pendahuluan}
+\section{Latar Belakang}
+Perkembangan sistem prediksi akademik mendorong pemanfaatan data historis untuk membantu proses pengambilan keputusan. Pada contoh ini digunakan data dummy berupa nilai tugas, kehadiran, dan nilai ujian untuk memprediksi nilai akhir mahasiswa. Pendekatan prediktif seperti ini banyak diterapkan pada sistem pembelajaran modern untuk membantu pemantauan performa peserta didik \cite{ahmad2022,pratama2023}.
+
+Sebagai ilustrasi, rata-rata nilai akhir mahasiswa dapat dimodelkan sebagai kombinasi linier dari tiga komponen utama, yaitu nilai tugas, kehadiran, dan nilai ujian. Model sederhana ini dipilih karena mudah dipahami pada tahap proposal awal.
+
+\section{Rumusan Masalah}
+Rumusan masalah pada contoh proposal ini adalah sebagai berikut.
+\begin{enumerate}
+    \item Bagaimana membangun model prediksi nilai akhir mahasiswa menggunakan data dummy?
+    \item Faktor apa yang paling berpengaruh terhadap nilai akhir berdasarkan simulasi data?
+    \item Bagaimana mengevaluasi hasil prediksi secara sederhana?
+\end{enumerate}
+
+\section{Tujuan Penelitian}
+Tujuan penelitian ini adalah:
+\begin{enumerate}
+    \item menyusun model prediksi nilai akhir mahasiswa berbasis data dummy,
+    \item menganalisis pengaruh variabel masukan terhadap hasil prediksi, dan
+    \item mengevaluasi performa model menggunakan ukuran galat sederhana.
+\end{enumerate}
+
+\section{Manfaat Penelitian}
+Penelitian ini diharapkan memberi manfaat sebagai contoh implementasi penulisan proposal skripsi dengan elemen persamaan, gambar, sitasi, dan daftar pustaka secara terintegrasi.
+
+\chapter{Kajian Pustaka}
+\section{Tinjauan Pustaka}
+Beberapa penelitian menunjukkan bahwa performa akademik dapat dianalisis menggunakan data pembelajaran dan statistik sederhana \cite{ahmad2022}. Selain itu, penggunaan visualisasi juga membantu interpretasi hasil model \cite{santoso2021}.
+
+\section{Landasan Teoretik}
+Salah satu model sederhana yang dapat digunakan adalah regresi linier. Dalam contoh ini, prediksi nilai akhir mahasiswa ($\hat{y}$) dirumuskan sebagai:
+\begin{equation}
+\hat{y} = 0.35x_1 + 0.25x_2 + 0.40x_3,
+\end{equation}
+dengan $x_1$ menyatakan nilai tugas, $x_2$ menyatakan persentase kehadiran, dan $x_3$ menyatakan nilai ujian akhir.
+
+Untuk mengevaluasi hasil prediksi digunakan ukuran \textit{mean squared error} (MSE) sebagai berikut:
+\begin{equation}
+\mathrm{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2,
+\end{equation}
+dengan $y_i$ adalah nilai aktual, $\hat{y}_i$ adalah nilai prediksi, dan $n$ adalah jumlah data \cite{pratama2023}.
+
+Gambar~\ref{fig:alur-penelitian} menunjukkan ilustrasi alur penelitian menggunakan data dummy.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.30\textwidth]{logo-unnes.png}
+    \caption{Ilustrasi placeholder gambar penelitian. Pada penggunaan nyata, gambar ini dapat diganti dengan diagram alur, arsitektur sistem, atau grafik hasil penelitian.}
+    \label{fig:alur-penelitian}
+\end{figure}
+
+\chapter{Metode Penelitian}
+\section{Pendekatan, Jenis, dan Prosedur}
+Penelitian ini menggunakan pendekatan kuantitatif dengan data simulasi. Prosedur penelitian meliputi pengumpulan data dummy, pemodelan, pengujian, dan evaluasi hasil.
+
+\section{Lokasi dan Waktu}
+Penelitian direncanakan dilaksanakan di lingkungan Program Studi Teknik Informatika pada semester genap tahun akademik 2025/2026.
+
+\section{Data dan Sumber Data}
+Data yang digunakan merupakan data dummy sebanyak 100 sampel mahasiswa. Masing-masing sampel terdiri atas tiga fitur, yaitu nilai tugas, kehadiran, dan nilai ujian. Contoh sebagian data disajikan pada Tabel~\ref{tab:data-dummy}.
+
+\begin{table}[H]
+    \centering
+    \caption{Contoh data dummy penelitian}
+    \label{tab:data-dummy}
+    \begin{tabular}{cccc}
+        \toprule
+        No. & Nilai Tugas & Kehadiran (\%) & Nilai Ujian \\
+        \midrule
+        1 & 80 & 90 & 85 \\
+        2 & 75 & 88 & 82 \\
+        3 & 92 & 95 & 90 \\
+        4 & 68 & 80 & 74 \\
+        5 & 85 & 93 & 87 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Teknik Analisis Data}
+Analisis data dilakukan melalui tiga tahap. Pertama, data dummy dinormalisasi agar berada pada rentang yang sebanding. Kedua, model prediksi dibentuk menggunakan persamaan regresi sederhana. Ketiga, hasil prediksi dibandingkan dengan nilai aktual menggunakan MSE. Apabila diperlukan, visualisasi tambahan dapat disusun dalam bentuk grafik atau diagram untuk memudahkan interpretasi hasil \cite{santoso2021}.
+
+\chapter*{Daftar Pustaka}
+\addcontentsline{toc}{chapter}{Daftar Pustaka}
+\printbibliography[heading=none]
+
+\end{document}
