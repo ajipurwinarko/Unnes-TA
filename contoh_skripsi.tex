@@ -1,0 +1,199 @@
+\documentclass[skripsi]{unnes-ta_plus}
+
+% ---- paket tambahan untuk isi contoh ----
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{references_dummy.bib}
+
+% ---- metadata ----
+\unnesSetTitle{Analisis Prediksi Kelulusan Mahasiswa Menggunakan Data Akademik Simulasi}
+\unnesSetDegree{Sarjana Komputer}
+\unnesSetAuthor{Nama Mahasiswa}
+\unnesSetNIM{1234567890}
+\unnesSetProdi{Teknik Informatika}
+\unnesSetFakultas{Fakultas Matematika dan Ilmu Pengetahuan Alam}
+\unnesSetCity{Semarang}
+\unnesSetYear{2026}
+\unnesSetPembimbing{Nama Pembimbing}{198765432100000001}
+
+\tanggalPersetujuan{10 Januari 2026}
+\tanggalPernyataan{15 Januari 2026}
+
+
+\hariPengesahan{Senin}
+\tanggalPengesahan{12 Januari }
+\tahunPengesahan{2026}
+
+\begin{document}
+\unnesFrontMatter
+
+% Bagian awal skripsi
+\maketitleunnes
+\unnesPersetujuanPembimbing
+
+\unnesPengesahanPenguji
+  {Prof. Dr. Ketua Penguji, M.Kom. / 196501011990011001}
+  {Dr. Sekretaris Penguji, S.Kom., M.Cs. / 197002021995021002}
+  {Dr. Penguji 1, S.T., M.T. / 197503031998031003}
+  {Dr. Penguji 2, S.Si., M.Kom. / 198004041999041004}
+
+\unnesPernyataanKeaslian
+
+\begin{unnesabstract}
+Judul penelitian ini adalah \textit{Analisis Prediksi Kelulusan Mahasiswa Menggunakan Data Akademik Simulasi}. Penelitian ini disusun oleh Nama Mahasiswa dengan dosen pembimbing Nama Pembimbing. Penelitian bertujuan untuk menganalisis pemanfaatan data akademik sederhana dalam memprediksi kelulusan mahasiswa. Data yang digunakan pada contoh ini berupa data simulasi yang mencakup nilai tugas, persentase kehadiran, dan nilai ujian akhir. Metode yang digunakan adalah regresi linier sederhana untuk menggambarkan hubungan antara variabel masukan dengan hasil prediksi. Hasil simulasi menunjukkan bahwa kombinasi ketiga variabel tersebut dapat memberikan gambaran awal mengenai performa akademik mahasiswa. Contoh ini disusun untuk memperlihatkan format penulisan skripsi menggunakan kelas \texttt{unnes-ta\_plus}, yang mencakup unsur abstrak, persamaan, tabel, gambar, sitasi, dan daftar pustaka.
+
+\textbf{Kata kunci:} prediksi kelulusan, data akademik, regresi linier, simulasi, skripsi
+\end{unnesabstract}
+
+\begin{unnesabstracten}
+The title of this study is \textit{Analysis of Student Graduation Prediction Using Simulated Academic Data}. This study is written by Nama Mahasiswa under the supervision of Nama Pembimbing. The research aims to analyze the use of simple academic data to predict student graduation outcomes. The data used in this example are simulated data consisting of assignment scores, attendance percentage, and final examination scores. The method employed is simple linear regression to describe the relationship between input variables and prediction results. The simulation results indicate that the combination of these three variables can provide an initial overview of student academic performance. This example is prepared to demonstrate the thesis writing format using the \texttt{unnes-ta\_plus} class, including abstracts, equations, tables, figures, citations, and references.
+
+\textbf{Keywords:} graduation prediction, academic data, linear regression, simulation, thesis
+\end{unnesabstracten}
+
+\tableofcontents
+\clearpage
+
+\unnesMainMatter
+
+\chapter{Pendahuluan}
+
+\section{Latar Belakang}
+Perkembangan teknologi informasi telah mendorong pemanfaatan data dalam berbagai bidang, termasuk pendidikan. Data akademik mahasiswa, seperti nilai tugas, kehadiran, dan nilai ujian, dapat digunakan sebagai dasar untuk melakukan analisis performa belajar. Salah satu bentuk analisis yang dapat dilakukan adalah prediksi kelulusan mahasiswa. Prediksi ini penting karena dapat membantu program studi dalam melakukan identifikasi awal terhadap mahasiswa yang memerlukan pendampingan akademik \cite{ahmad2022,pratama2023}.
+
+Pada contoh skripsi ini, digunakan data simulasi untuk memperlihatkan struktur penulisan karya ilmiah secara utuh. Walaupun data yang dipakai belum berupa data riil, bentuk penyajian penelitian tetap mengikuti kaidah umum penulisan skripsi.
+
+\section{Rumusan Masalah}
+Rumusan masalah dalam penelitian ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Bagaimana membangun model prediksi kelulusan mahasiswa menggunakan data akademik simulasi?
+    \item Variabel apa yang paling berpengaruh terhadap hasil prediksi?
+    \item Bagaimana mengevaluasi hasil prediksi secara sederhana?
+\end{enumerate}
+
+\section{Tujuan Penelitian}
+Penelitian ini bertujuan untuk:
+\begin{enumerate}
+    \item membangun model prediksi kelulusan mahasiswa berbasis data simulasi;
+    \item menganalisis pengaruh variabel masukan terhadap hasil prediksi; dan
+    \item mengevaluasi performa model menggunakan ukuran galat sederhana.
+\end{enumerate}
+
+\section{Manfaat Penelitian}
+Penelitian ini diharapkan memberikan manfaat sebagai berikut:
+\begin{enumerate}
+    \item memberikan contoh sederhana pemanfaatan data akademik untuk analisis prediktif;
+    \item menjadi contoh format penulisan skripsi menggunakan \LaTeX; dan
+    \item menjadi dasar pengembangan penelitian lanjutan dengan data nyata dan metode yang lebih kompleks.
+\end{enumerate}
+
+\chapter{Tinjauan Pustaka}
+
+\section{Penelitian Terkait}
+Beberapa penelitian menunjukkan bahwa data akademik dapat dimanfaatkan untuk mendukung analisis performa mahasiswa \cite{ahmad2022}. Model statistik sederhana, seperti regresi linier, masih relevan digunakan untuk memberikan interpretasi awal yang mudah dipahami \cite{pratama2023}. Selain itu, visualisasi data juga berperan penting dalam membantu penyajian hasil penelitian agar lebih informatif \cite{santoso2021}.
+
+\section{Landasan Teori}
+Salah satu pendekatan yang dapat digunakan dalam analisis prediksi adalah regresi linier. Pada penelitian ini, skor prediksi kelulusan mahasiswa ($\hat{y}$) dirumuskan sebagai:
+\begin{equation}
+\hat{y} = 0.35x_1 + 0.25x_2 + 0.40x_3,
+\end{equation}
+dengan:
+\begin{itemize}
+    \item $x_1$ = nilai tugas,
+    \item $x_2$ = persentase kehadiran,
+    \item $x_3$ = nilai ujian akhir.
+\end{itemize}
+
+Untuk mengevaluasi hasil prediksi digunakan ukuran \textit{mean squared error} (MSE), yang dirumuskan sebagai:
+\begin{equation}
+\mathrm{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2,
+\end{equation}
+dengan $y_i$ menyatakan nilai aktual, $\hat{y}_i$ menyatakan nilai prediksi, dan $n$ menyatakan jumlah data \cite{pratama2023}.
+
+\chapter{Metode Penelitian}
+
+\section{Jenis Penelitian}
+Penelitian ini merupakan penelitian kuantitatif dengan pendekatan simulasi data. Fokus penelitian adalah membangun model prediksi sederhana dan mengevaluasi hasilnya.
+
+\section{Lokasi dan Waktu Penelitian}
+Penelitian ini dilaksanakan secara simulatif di lingkungan Program Studi Teknik Informatika pada semester genap tahun akademik 2025/2026.
+
+\section{Data dan Sumber Data}
+Data yang digunakan berupa data dummy sebanyak 100 sampel mahasiswa. Setiap sampel terdiri atas tiga atribut utama, yaitu nilai tugas, persentase kehadiran, dan nilai ujian akhir.
+
+Contoh sebagian data ditunjukkan pada Tabel~\ref{tab:data-dummy}.
+
+\begin{table}[H]
+    \centering
+    \caption{Contoh data dummy penelitian}
+    \label{tab:data-dummy}
+    \begin{tabular}{ccccc}
+        \toprule
+        No. & Nilai Tugas & Kehadiran (\%) & Nilai Ujian & Status Kelulusan \\
+        \midrule
+        1 & 80 & 90 & 85 & Lulus \\
+        2 & 75 & 88 & 82 & Lulus \\
+        3 & 92 & 95 & 90 & Lulus \\
+        4 & 68 & 80 & 74 & Tidak Lulus \\
+        5 & 85 & 93 & 87 & Lulus \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Teknik Pengumpulan Data}
+Pada contoh ini, data diperoleh secara simulatif dengan menetapkan rentang nilai tertentu untuk setiap variabel. Teknik ini digunakan untuk menunjukkan alur penulisan dan analisis dalam skripsi.
+
+\section{Teknik Analisis Data}
+Analisis data dilakukan melalui tahapan berikut:
+\begin{enumerate}
+    \item menyiapkan data simulasi;
+    \item menghitung nilai prediksi menggunakan model regresi linier;
+    \item membandingkan nilai prediksi dengan nilai aktual; dan
+    \item menghitung MSE sebagai ukuran kinerja model.
+\end{enumerate}
+
+\chapter{Hasil dan Pembahasan}
+
+\section{Hasil Simulasi}
+Berdasarkan data simulasi, model menghasilkan prediksi yang cukup dekat dengan nilai aktual. Sebagai contoh, untuk seorang mahasiswa dengan nilai tugas 80, kehadiran 90, dan nilai ujian 85, maka diperoleh hasil prediksi sebagai berikut:
+\begin{equation}
+\hat{y} = 0.35(80) + 0.25(90) + 0.40(85) = 84.5
+\end{equation}
+
+Nilai tersebut menunjukkan bahwa mahasiswa diprediksi memiliki performa akademik yang baik.
+
+\section{Visualisasi Hasil}
+Sebagai contoh placeholder, Gambar~\ref{fig:placeholder} menunjukkan gambar yang dapat diganti dengan grafik hasil penelitian, diagram alur sistem, atau visualisasi model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.28\textwidth]{logo-unnes.png}
+    \caption{Contoh placeholder gambar pada naskah skripsi}
+    \label{fig:placeholder}
+\end{figure}
+
+\section{Pembahasan}
+Hasil simulasi menunjukkan bahwa nilai ujian akhir memberikan kontribusi paling besar dalam model karena memiliki bobot tertinggi. Temuan ini sejalan dengan asumsi umum bahwa evaluasi akhir berpengaruh kuat terhadap hasil akademik mahasiswa \cite{ahmad2022}. Namun demikian, kehadiran dan nilai tugas tetap memberikan kontribusi yang penting terhadap hasil prediksi.
+
+\chapter{Simpulan dan Saran}
+
+\section{Simpulan}
+Berdasarkan hasil penelitian simulatif ini, dapat disimpulkan bahwa:
+\begin{enumerate}
+    \item data akademik sederhana dapat digunakan untuk membangun model prediksi awal;
+    \item regresi linier dapat menjadi pendekatan awal yang mudah diinterpretasikan; dan
+    \item format skripsi dengan kelas \texttt{unnes-ta\_plus} dapat memuat elemen penting seperti abstrak, persamaan, tabel, gambar, sitasi, dan daftar pustaka.
+\end{enumerate}
+
+\section{Saran}
+Penelitian selanjutnya dapat menggunakan data nyata dengan jumlah sampel yang lebih besar, menerapkan metode prediksi atau klasifikasi yang lebih kompleks, dan menambahkan evaluasi yang lebih komprehensif.
+
+\chapter*{Daftar Pustaka}
+\addcontentsline{toc}{chapter}{Daftar Pustaka}
+\printbibliography[heading=none]
+
+\end{document}

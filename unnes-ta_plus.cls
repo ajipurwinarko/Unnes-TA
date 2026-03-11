@@ -19,6 +19,22 @@
 \def\unnes@pernyataantitle{PERNYATAAN KEASLIAN}
 \def\unnes@pembimbinglabel{Pembimbing}
 
+% ---- tanggal khusus ----
+\def\@tanggalpersetujuan{}
+\def\@tanggalpernyataan{}
+
+\newcommand{\tanggalPersetujuan}[1]{\gdef\@tanggalpersetujuan{#1}}
+\newcommand{\tanggalPernyataan}[1]{\gdef\@tanggalpernyataan{#1}}
+
+% ---- hari dan tanggal pengesahan ----
+\def\@haripengesahan{}
+\def\@tanggalpengesahan{}
+\def\@tahunpengesahan{}
+
+\newcommand{\hariPengesahan}[1]{\gdef\@haripengesahan{#1}}
+\newcommand{\tanggalPengesahan}[1]{\gdef\@tanggalpengesahan{#1}}
+\newcommand{\tahunPengesahan}[1]{\gdef\@tahunpengesahan{#1}}
+
 % Book-chapter extra metadata (only used when bookchapter option is active)
 \def\unnes@booktitle{...}
 \def\unnes@bookpublisher{...}
@@ -205,6 +221,17 @@
   \unnesCoverPage{\unnes@coverlabel}%
 }
 
+
+% ---- helper: blok tanda tangan rata kanan ----
+\newcommand{\unnesRightSignBlock}[1]{%
+\begin{flushright}
+  \begin{minipage}{0.38\textwidth}
+    \raggedright
+    #1
+  \end{minipage}
+\end{flushright}%
+}
+
 % ---- Persetujuan Pembimbing (sesuai contoh format) ----
 \newcommand{\unnesPersetujuanPembimbing}{%
 \thispagestyle{empty}
@@ -233,21 +260,25 @@ Prodi/Fakultas : \unnesProdi{} / \unnesFakultas\\[0.6cm]
 \ifunnes@bookchapter
 \noindent dalam book chapter berjudul ``\unnes@booktitle'' yang \unnes@bookstatus\ diterbitkan oleh \unnes@bookpublisher.\\[0.6cm]
 \fi
-\noindent telah disetujui untuk diajukan ke penilaian proposal/ujian \unnes@ujianlabel.\\[0.8cm]
-\noindent \unnesCity, \rule{4cm}{0.4pt}\\
-\noindent \unnes@pembimbinglabel\\[1.2cm]
-\noindent \unnesPembimbingNama\\
-\noindent \unnesPembimbingNIP
+\noindent telah disetujui untuk diajukan ke penilaian proposal/ujian \unnes@ujianlabel.\\[1.2cm]
+\unnesRightSignBlock{%
+%\unnesCity, \rule{4cm}{0.4pt}\\[0.8cm]
+\unnesCity%
+\ifx\@tanggalpersetujuan\@empty\else, \@tanggalpersetujuan\fi\\
+\unnes@pembimbinglabel\\[1.8cm]
+\unnesPembimbingNama\\
+\unnesPembimbingNIP
+}
 \clearpage
 }
 
 % ---- Pengesahan Tim Penguji (khusus skripsi) ----
-\newcommand{\unnesPengesahanPenguji}[4]{% ketua, sekretaris, penguji1, penguji2 (nama+NIP bebas)
+\newcommand{\unnesPengesahanPenguji}[4]{% ketua, sekretaris, penguji1, penguji2
 \thispagestyle{empty}
 \begin{center}
   \textbf{PENGESAHAN PENGUJI}
 \end{center}
-\vspace{0.6cm}
+\vspace{0.4cm}
 \noindent
 \ifunnes@bookchapter
 Naskah chapter berjudul ``\unnesTitle'' yang disusun oleh\\
@@ -260,19 +291,42 @@ Naskah chapter berjudul ``\unnesTitle'' yang disusun oleh\\
 \fi
 nama \hspace{1.1cm}: \unnesAuthor\\
 NIM \hspace{1.35cm}: \unnesNIM\\
-Prodi/Fakultas : \unnesProdi{} / \unnesFakultas\\[0.6cm]
+Prodi/Fakultas : \unnesProdi{} / \unnesFakultas\\[0.45cm]
 \ifunnes@bookchapter
-\noindent dalam book chapter berjudul ``\unnes@booktitle'' yang \unnes@bookstatus\ diterbitkan oleh \unnes@bookpublisher.\\[0.6cm]
+\noindent dalam book chapter berjudul ``\unnes@booktitle'' yang \unnes@bookstatus\ diterbitkan oleh \unnes@bookpublisher.\\[0.45cm]
 \fi
-\noindent telah dipertahankan dalam ujian \unnes@ujianlabel\ pada hari \rule{2cm}{0.4pt},
-tanggal \rule{2cm}{0.4pt} tahun \rule{1.5cm}{0.4pt}.\\[0.8cm]
-\noindent Tim Penguji\\[0.6cm]
-\begin{tabular}{@{}p{5cm}p{8cm}@{}}
-Ketua Penguji & #1\\[1.0cm]
-Sekretaris    & #2\\[1.0cm]
-Penguji 1     & #3\\[1.0cm]
-Penguji 2     & #4\\
+\noindent telah dipertahankan dalam ujian \unnes@ujianlabel\ pada hari
+\ifx\@haripengesahan\@empty \rule{2cm}{0.4pt}\else \@haripengesahan\fi,
+tanggal
+\ifx\@tanggalpengesahan\@empty \rule{2cm}{0.4pt}\else \@tanggalpengesahan \fi
+tahun
+\ifx\@tahunpengesahan\@empty \rule{1.5cm}{0.4pt}\else \@tahunpengesahan\fi.\\[0.55cm]
+
+\begin{center}
+Tim Penguji
+\end{center}
+\vspace{0.15cm}
+
+\begin{center}
+{\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.0}
+\begin{tabular}{|p{0.48\textwidth}|p{0.40\textwidth}|}
+\hline
+\parbox[t][1.55cm][t]{\linewidth}{\raggedright\textbf{Ketua Penguji}\par\vspace{0.18em}#1} &
+\parbox[t][1.55cm][t]{\linewidth}{} \tabularnewline \hline
+
+\parbox[t][1.55cm][t]{\linewidth}{\raggedright\textbf{Sekretaris}\par\vspace{0.18em}#2} &
+\parbox[t][1.55cm][t]{\linewidth}{} \tabularnewline \hline
+
+\parbox[t][1.55cm][t]{\linewidth}{\raggedright\textbf{Penguji 1}\par\vspace{0.18em}#3} &
+\parbox[t][1.55cm][t]{\linewidth}{} \tabularnewline \hline
+
+\parbox[t][1.55cm][t]{\linewidth}{\raggedright\textbf{Penguji 2}\par\vspace{0.18em}#4} &
+\parbox[t][1.55cm][t]{\linewidth}{} \tabularnewline \hline
 \end{tabular}
+}
+\end{center}
 \clearpage
 }
 
@@ -299,10 +353,19 @@ asli dan bukan hasil plagiasi dari karya ilmiah orang lain.
 \fi
 Pendapat atau temuan orang lain yang dikutip di dalam karya ini telah ditulis berdasarkan kode etik ilmiah.
 Berdasarkan pernyataan ini, saya siap menanggung sanksi hukum apabila ditemukan pelanggaran terhadap integritas
-akademik dalam karya ini.\\[1.0cm]
-\noindent \unnesCity, \rule{4cm}{0.4pt}\\[1.0cm]
-\noindent \unnes@materai\\[1.2cm]
-\noindent (\unnesAuthor)
+akademik dalam karya ini.\\[1.4cm]
+\unnesRightSignBlock{%
+%\unnesCity, \rule{4cm}{0.4pt}\\[0.8cm]
+\ifx\@tanggalpernyataan\@empty
+  \unnesCity\\
+\else
+  \unnesCity, \@tanggalpernyataan\\
+\fi
+Yang menyatakan\\[1.2cm]
+(\unnes@materai)\\[1.2cm]
+\unnesAuthor\\
+NIM \unnesNIM
+}
 \clearpage
 }
 
