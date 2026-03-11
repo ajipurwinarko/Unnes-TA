@@ -1,4 +1,4 @@
-# README Penggunaan Template LaTeX Tugas Akhir UNNES 2025
+# README Penggunaan Template LaTeX Tugas Akhir UNNES 2024
 
 Template ini disusun untuk membantu penulisan dokumen akademik di lingkungan **Universitas Negeri Semarang (UNNES)** berbasis LaTeX. Berdasarkan isi paket saat ini, template sudah mencakup empat kebutuhan utama:
 
