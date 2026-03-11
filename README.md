@@ -420,9 +420,4 @@ atau untuk artikel:
 
 ## 16. Lisensi dan pengembangan lanjutan
 
-README ini disusun berdasarkan struktur file paket saat ini dan diskusi pengembangan pada proyek **Panduan Skripsi UNNES**. Jika nantinya template akan dipublikasikan lebih luas, disarankan menambahkan:
-
-- informasi versi,
-- changelog,
-- lisensi penggunaan,
-- contoh output PDF untuk tiap mode dokumen.
+README ini disusun berdasarkan struktur file paket saat ini dan diskusi pengembangan pada proyek **Panduan Skripsi UNNES**. 
