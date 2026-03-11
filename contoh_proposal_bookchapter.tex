@@ -1,0 +1,113 @@
+\documentclass[proposal-bookchapter]{unnes-ta_plus}
+\usepackage[indonesian]{babel}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{references_dummy_bookchapter.bib}
+
+\unnesSetTitle{Pengembangan Media Pembelajaran Adaptif Berbasis Data Simulasi untuk Mendukung Pembelajaran Mandiri}
+\unnesSetAuthor{Nama Mahasiswa}
+\unnesSetNIM{1234567890}
+\unnesSetProdi{Teknik Informatika}
+\unnesSetFakultas{Fakultas Matematika dan Ilmu Pengetahuan Alam}
+\unnesSetDegree{Sarjana Komputer}
+\unnesSetCity{Semarang}
+\unnesSetYear{2026}
+\unnesSetPembimbing{Nama Pembimbing}{198765432100000001}
+
+% Khusus bookchapter
+\booktitle{Inovasi Pembelajaran Digital di Era Transformasi Pendidikan}
+\bookpublisher{Penerbit Akademika Nusantara}
+\bookstatus{akan}
+
+\begin{document}
+
+\maketitleunnes
+\unnesPersetujuanPembimbing
+\tableofcontents
+\clearpage
+
+\unnesMainMatter
+
+\chapter{Naskah Chapter}
+
+% Jika naskah chapter sudah jadi dalam bentuk PDF, gunakan salah satu opsi berikut:
+% \includepdf[pages=-]{naskah_chapter.pdf}
+% atau tulis isi chapter langsung seperti contoh ini.
+
+\section{Pendahuluan}
+Transformasi pendidikan digital mendorong penggunaan media pembelajaran yang lebih adaptif, interaktif, dan berbasis data. Dalam contoh ini, naskah chapter disusun dengan data dummy untuk memperlihatkan cara menulis proposal book chapter menggunakan kelas \texttt{unnes-ta\_plus}. Pendekatan pembelajaran adaptif umumnya memanfaatkan informasi performa pengguna untuk menyesuaikan materi, umpan balik, atau tingkat kesulitan pembelajaran \cite{rahman2022,sari2023}.
+
+Sebagai ilustrasi, sistem pembelajaran adaptif pada penelitian ini menggunakan tiga indikator utama, yaitu skor kuis, intensitas akses materi, dan frekuensi latihan mandiri. Ketiga indikator tersebut digabungkan untuk membentuk skor adaptivitas peserta didik.
+
+\section{Rumusan Ide Chapter}
+Naskah chapter ini berfokus pada tiga gagasan utama:
+\begin{enumerate}
+    \item bagaimana data aktivitas belajar dapat dirangkum menjadi skor adaptivitas,
+    \item bagaimana visualisasi sederhana membantu interpretasi hasil, dan
+    \item bagaimana format naskah chapter dapat disiapkan sejak tahap proposal.
+\end{enumerate}
+
+\section{Landasan Konseptual}
+Salah satu pendekatan sederhana untuk menghitung skor adaptivitas peserta didik adalah kombinasi linier berbobot. Misalkan $x_1$ adalah skor kuis, $x_2$ adalah intensitas akses materi, dan $x_3$ adalah frekuensi latihan mandiri, maka skor adaptivitas ($A$) dapat dituliskan sebagai:
+\begin{equation}
+A = 0.40x_1 + 0.35x_2 + 0.25x_3.
+\end{equation}
+
+Semakin besar nilai $A$, semakin tinggi tingkat adaptivitas belajar peserta didik. Untuk menilai kesesuaian antara skor target dan skor hasil estimasi dapat digunakan galat rata-rata kuadrat atau \textit{mean squared error} (MSE), yaitu:
+\begin{equation}
+\mathrm{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2,
+\end{equation}
+dengan $y_i$ sebagai skor aktual, $\hat{y}_i$ sebagai skor prediksi, dan $n$ sebagai jumlah sampel \cite{wijaya2021}.
+
+\section{Contoh Data Dummy}
+Contoh data dummy yang digunakan pada proposal ini dapat dilihat pada Tabel~\ref{tab:data-dummy-bc}. Data ini hanya berfungsi sebagai ilustrasi format penulisan dan bukan data penelitian sebenarnya.
+
+\begin{table}[H]
+    \centering
+    \caption{Contoh data dummy peserta didik}
+    \label{tab:data-dummy-bc}
+    \begin{tabular}{ccccc}
+        \toprule
+        No. & Skor Kuis & Akses Materi & Latihan Mandiri & Skor Target \\
+        \midrule
+        1 & 82 & 90 & 78 & 84 \\
+        2 & 75 & 80 & 70 & 74 \\
+        3 & 91 & 95 & 88 & 92 \\
+        4 & 68 & 72 & 65 & 69 \\
+        5 & 85 & 89 & 80 & 86 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Contoh Visualisasi atau Gambar}
+Gambar~\ref{fig:placeholder-bookchapter} menunjukkan placeholder gambar. Dalam penggunaan nyata, gambar ini dapat diganti dengan diagram alur penelitian, rancangan sistem, grafik hasil eksperimen, atau ilustrasi model konseptual \cite{nugroho2024}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.28\textwidth]{logo-unnes.png}
+    \caption{Contoh placeholder gambar pada naskah chapter}
+    \label{fig:placeholder-bookchapter}
+\end{figure}
+
+\section{Rencana Struktur Isi Chapter}
+Secara umum, naskah chapter yang akan diajukan direncanakan memiliki struktur sebagai berikut.
+\begin{enumerate}
+    \item Pendahuluan
+    \item Tinjauan pustaka atau landasan konseptual
+    \item Metode atau pendekatan penulisan
+    \item Hasil dan pembahasan
+    \item Kesimpulan
+\end{enumerate}
+
+Struktur tersebut dapat disesuaikan dengan pedoman penerbit atau editor buku. Apabila penerbit telah menyediakan template final dalam bentuk PDF, maka isi chapter dapat langsung disisipkan menggunakan perintah \verb|\includepdf| seperti pada komentar di awal bab ini.
+
+\section{Penutup}
+Contoh ini menunjukkan bahwa proposal book chapter dapat memuat unsur-unsur akademik penting, seperti uraian gagasan, persamaan, tabel, gambar, sitasi, dan daftar pustaka. Dengan demikian, file proposal tidak hanya berfungsi sebagai administrasi pembimbingan, tetapi juga dapat menjadi dasar awal penyusunan naskah chapter yang lebih lengkap.
+
+\chapter*{Daftar Pustaka}
+\addcontentsline{toc}{chapter}{Daftar Pustaka}
+\printbibliography[heading=none]
+
+\end{document}
